@@ -4,16 +4,12 @@
 
 console.log('Inflate The Unicorn!')
 
-let unicornImg = document.getElementsByClassName('inflate-an-image')
-
-for (let i = 0; i < unicornImg.length; i++) {
-  unicornImg[i].onclick = inflate
-}
+const unicornImg = document.getElementsByClassName('inflate-an-image')
 
 //write function and call it with onclick method - gets called every time you click on a unicorn
 
 function inflate(e) {
-  let unicorn = e.target
+  const unicorn = e.target
   if (unicorn.src.includes('images/unicorn-0.png')) {
     unicorn.src = './images/unicorn-1.png'
   } else if (unicorn.src.includes('images/unicorn-1.png')) {
@@ -23,4 +19,8 @@ function inflate(e) {
   } else {
     alert('Unicorn ' + unicorn.id + ' says thank you')
   }
+}
+
+for (let i = 0; i < unicornImg.length; i++) {
+  unicornImg[i].onclick = inflate
 }
