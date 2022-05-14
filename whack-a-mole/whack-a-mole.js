@@ -6,17 +6,11 @@ console.log('Whack-a-Mole!')
 
 //Access data in all cells
 const dataCells = document.getElementsByTagName('td')
-//console.log(dataCells)
-
-//Get random integer for cells
-
-//console.log(randomElement)
 
 //get mole image
 const moleImage = document.createElement('img')
 moleImage.src = './mole.PNG'
 moleImage.id = 'mole'
-//console.log(moleImage)
 
 function randomMole() {
   const randomElement = dataCells[Math.floor(Math.random() * dataCells.length)]
@@ -27,7 +21,6 @@ function randomMoleClick(e) {
   const cell = e.target
   let sound = new Audio()
   sound.src = 'whack-audio.wav'
-  //console.log(cell)
   if (cell.id == 'mole') {
     cell.parentNode.removeChild(moleImage)
     randomMole()
